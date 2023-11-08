@@ -13,7 +13,7 @@
     </head>
     <body>
         <div class = "bg-sky-500 w-full p-10 flex items-center justify-center">
-            <h1 class ="text-white"> prueba</h1>
+            <h1 class ="text-white"> prueba1</h1>
         </div>
 
     </body>
