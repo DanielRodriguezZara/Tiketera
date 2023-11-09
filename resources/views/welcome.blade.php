@@ -14,6 +14,8 @@
     <body>
         <div class = "bg-sky-500 w-full p-10 flex items-center justify-center">
             <h1 class ="text-white"> prueba2</h1>
+            <h1 class ="text-white"> prueba 3 miriam</h1>
+
         </div>
 
     </body>
