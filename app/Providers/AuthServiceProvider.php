@@ -23,11 +23,16 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $roles = Rol::all();
-        foreach($roles as $rol){
-            Gate::define($rol->rol, function($user)use($rol){
-                return $user->rol->id == $rol->id;
-            });
+        try {
+            $roles = Rol::all();
+            foreach ($roles as $rol) {
+                Gate::define($rol->rol, function ($user) use ($rol) {
+                    return $user->rol->id == $rol->id;
+                });
+            }
+        } catch (\Throwable $th) {
+            \Log::error($th->getMessage());
+            
         }
     }
 }
