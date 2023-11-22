@@ -3,6 +3,9 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
+        @can('asociado')
+            <a href="{{route('prueba', auth()->user())}}">hollaa</a>
+        @endcan
     </x-slot>
 
     <div class="py-12">
