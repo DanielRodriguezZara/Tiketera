@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PruebaController;
 use App\Livewire\Home\Dashboard;
+use Illuminate\Support\Facades\Route;
+use App\Livewire\SolicitudesComponent;
+use App\Livewire\AltaUsuariosComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,5 @@ Route::middleware([
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
 });
 
-Route::get('/user/rol/{user}', [PruebaController::class, 'store'])->name('prueba');
+Route::get('/solicitudes', SolicitudesComponent::class)->name('solicitudes');
+Route::get('/alta-usuarios', AltaUsuariosComponent::class)->name('alta-usuarios');
