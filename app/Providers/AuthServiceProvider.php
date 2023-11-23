@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
+use App\Models\Rol;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -21,6 +23,16 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        try {
+            $roles = Rol::all();
+            foreach ($roles as $rol) {
+                Gate::define($rol->rol, function ($user) use ($rol) {
+                    return $user->rol->id == $rol->id;
+                });
+            }
+        } catch (\Throwable $th) {
+            \Log::error($th->getMessage());
+            
+        }
     }
 }
