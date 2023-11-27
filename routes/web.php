@@ -30,3 +30,4 @@ Route::middleware([
 
 Route::get('/solicitudes', SolicitudesComponent::class)->name('solicitudes');
 Route::get('/alta-usuarios', AltaUsuariosComponent::class)->name('alta-usuarios');
+Route::get('/import-usuarios', ImportUsuariosComponent::class)->name('import-usuarios');
