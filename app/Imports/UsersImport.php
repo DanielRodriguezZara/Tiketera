@@ -40,7 +40,7 @@ class UsersImport implements ToModel
             '1' => 'required|in:Agente,Asesor,Administrador', // Perfil
             '2' => 'required|email', // Email
             '3' => 'required|string|min:8', // Contraseña
-            '4' => 'nullable|in:activo,inactivo,Activo,Inactivo', // Estado
+            '' => 'nullable|in:activo,inactivo,Activo,Inactivo', // Estado
 
         ];
     }

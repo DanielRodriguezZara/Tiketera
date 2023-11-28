@@ -4,6 +4,7 @@ use App\Livewire\Home\Dashboard;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\SolicitudesComponent;
 use App\Livewire\AltaUsuariosComponent;
+use App\Livewire\ImportUsuariosComponent;
 
 /*
 |--------------------------------------------------------------------------
