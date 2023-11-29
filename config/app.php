@@ -186,10 +186,10 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
-    ])->toArray(),
-
-     /**Importacion Excel */
+        /**Importacion Excel */
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ])->toArray(),
+
+
 
 ];
