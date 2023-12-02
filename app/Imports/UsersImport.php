@@ -3,11 +3,20 @@
 namespace App\Imports;
 
 use App\Models\User;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\Importable;
+use Maatwebsite\Excel\Concerns\WithUpserts;
+use Maatwebsite\Excel\Concerns\SkipsFailures;
+use Maatwebsite\Excel\Concerns\SkipsOnFailure;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\WithValidation;
+use Maatwebsite\Excel\Concerns\WithStartRow;
 
-class UsersImport implements ToModel
+class UsersImport implements ToModel, WithStartRow, WithHeadingRow, WithUpserts, WithValidation, SkipsOnFailure
 {
+    use Importable, SkipsFailures;
     /**
      * @param array $row
      *
@@ -16,9 +25,10 @@ class UsersImport implements ToModel
     public function model(array $row)
     {
         return new User([
-           'name'     => $row[0],
-           'email'    => $row[1],
-           'password' => Hash::make($row[2]),
+           'name' => $row[0],
+           'rol_id' => $row[1],
+           'email' => $row[2],
+           'password' => Hash::make($row[3]),
         ]);
 
     }
@@ -37,11 +47,9 @@ class UsersImport implements ToModel
     {
         return [
             '0' => 'required', // Nombre
-            '1' => 'required|in:Agente,Asesor,Administrador', // Perfil
+            '1' => 'required', // Perfil
             '2' => 'required|email', // Email
             '3' => 'required|string|min:8', // Contraseña
-            '' => 'nullable|in:activo,inactivo,Activo,Inactivo', // Estado
-
         ];
     }
     /**
@@ -51,10 +59,9 @@ class UsersImport implements ToModel
     {
         return [
             '0' => 'nombre',
-            '1' => 'perfil',
+            '1' => 'rol_id',
             '2' => 'email',
-            '3' => 'contraseña',
-            '4' => 'estado (Activo, Inactivo)',
+            '3' => 'password',
 
         ];
     }

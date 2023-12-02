@@ -12,7 +12,8 @@ class ImportUsuariosComponent extends Component
 {
     use WithFileUploads;
     public $usersFile;
-    public  $failures;
+    public $failures;
+
 
     public function mount()
     {
@@ -26,12 +27,14 @@ class ImportUsuariosComponent extends Component
             'usersFile.mimes' => 'El archivo debe ser de tipo Excel (.xlsx).',
         ]);
 
-
         $import = new UsersImport();
         $import->import($this->usersFile);
-        // Excel::import(new UsersImport, $this->usersFile);
-        $this->failures = $import->failures();
-
+        //Excel::import(new UsersImport, $this->usersFile);
+        $import->failures()->each(fn($item)=>$this->failures->push((object)[
+            'row' => $item->row(),
+            'attribute' => $item->attribute(),
+            'errors' => $item->errors()
+        ]));
     }
     public function render()
     {

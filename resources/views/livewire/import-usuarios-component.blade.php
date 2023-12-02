@@ -1,15 +1,15 @@
-x-slot name="header">Importar usuarios</x-slot>
-<div class="w-full text-black ">
-    <form wire:submit.prevent="save">
-        <div class="overflow-hidden">
-            <div class="mb-4 w-3/4 mx-auto">
+<div class="w-full mt-8 text-black ">
+    <form wire:submit="save">
+        <div class="overflow-hidden ">
+            <div class="mb-4 mx-auto">
                 <div class="flex">
                     <div class="flex flex-col flex-1">
-                        <x-input label="Subir archivo" labelClass="text-gray-500 text-lg" wire:model="usersFile"
-                            type="file" class="input-file flex-1" />
-
-                    <x-button class="h-10">Importar</x-button>
+                        <x-input label="Subir archivo" labelClass="text-gray-500 text-lg" wire:model.live="usersFile"
+                            type="file" class="block w-full text-sm text-slate-500 shadow-none outline-none file:mr-4 file:rounded-full file:border-0 file:bg-matisse-600 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-matisse-700 cursor-pointer" />
+                    </div>
+                    <x-button class="">Importar</x-button>
                 </div>
+                <x-input-error for="usersFile"/>
                 {{-- @livewire('import') --}}
             </div>
             @if (collect($failures)->isNotEmpty())
@@ -24,10 +24,10 @@ x-slot name="header">Importar usuarios</x-slot>
                     <tbody>
                         @foreach ($failures as $failure)
                             <tr class="border-b bg-neutral-100">
-                                <td td class="whitespace-nowrap px-6 py-4">{{ $failure->row() }}</td>
+                                <td td class="whitespace-nowrap px-6 py-4">{{ $failure->row }}</td>
                                 <td td class="whitespace-nowrap px-6 py-4">
-                                    {{ str($failure->attribute())->ucfirst() }}</td>
-                                <td td class="whitespace-nowrap px-6 py-4">{{ $failure->errors()[0] }}</td>
+                                    {{ str($failure->attribute)->ucfirst() }}</td>
+                                <td td class="whitespace-nowrap px-6 py-4">{{ $failure->errors[0] }}</td>
                             </tr>
                         @endforeach
                     </tbody>

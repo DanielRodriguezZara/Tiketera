@@ -29,6 +29,6 @@ Route::middleware([
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
 });
 
-Route::get('/solicitudes', SolicitudesComponent::class)->name('solicitudes');
-Route::get('/alta-usuarios', AltaUsuariosComponent::class)->name('alta-usuarios');
-Route::get('/import-usuarios', ImportUsuariosComponent::class)->name('import-usuarios');
+Route::get('/solicitudes', SolicitudesComponent::class)->middleware('auth')->name('solicitudes');
+Route::get('/alta-usuarios', AltaUsuariosComponent::class)->middleware('auth')->name('alta-usuarios');
+Route::get('/import-usuarios', ImportUsuariosComponent::class)->middleware('auth')->name('import-usuarios');
