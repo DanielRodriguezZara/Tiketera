@@ -1,5 +1,6 @@
 <div>
-<!DOCTYPE html>
+    
+    <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -10,8 +11,6 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <style type="text/css">
     	body{margin-top:20px;}
-@import url('https://fonts.googleapis.com/css?family=Abel');
-
 html, body {
   background: #e9ecec; /*color de fondo*/
   font-family: Abel, Arial, Verdana, sans-serif;
@@ -46,7 +45,7 @@ html, body {
   width: 150px;
   height: 100%;
   background: linear-gradient(#007ec6, #007ec6);
-   color: #fff;
+   color: #111110;
   transition: width 0.2s;
   overflow: hidden;
   z-index: 2;
@@ -104,61 +103,7 @@ html, body {
 /*.card .additional .more-info h1 {
   color: #ffffff;
   margin-bottom: 0;
-}*/me quede aqui
-
-.card.green .additional .more-info h1 {
-  color: #09b95e;
-}
-
-.card .additional .coords {
-  margin: 0 1rem;
-  color: #fff;
-  font-size: 1rem;
-}
-
-.card.green .additional .coords {
-  color: #325C46;
-}
-
-.card .additional .coords span + span {
-  float: right;
-}
-
-.card .additional .stats {
-  font-size: 2rem;
-  display: flex;
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  right: 1rem;
-  top: auto;
-  color: #fff;
-}
-
-.card.green .additional .stats {
-  color: #325C46;
-}
-
-.card .additional .stats > div {
-  flex: 1;
-  text-align: center;
-}
-
-.card .additional .stats i {
-  display: block;
-}
-
-.card .additional .stats div.title {
-  font-size: 0.75rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.card .additional .stats div.value {
-  font-size: 1.5rem;
-  font-weight: bold;
-  line-height: 1.5rem;
-}
+}*/
 
 .card .additional .stats div.value.infinity {
   font-size: 2.5rem;
@@ -217,25 +162,9 @@ html, body {
             flex-wrap: wrap;
             justify-content: space-around;
         }
-/*
-        .card {
-            width: 500px;
-            margin: 20px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        /* Puedes personalizar los estilos según tus necesidades */
     </style>
-    <title>Tarjetas de Datos</title>
-</head>
-
   
-        
-
+</head>
 <body>
     
         <div>
@@ -266,7 +195,6 @@ html, body {
                         <div class="general">
                         <h1>Disfrute su cumpleaños</h1>
                         <p>Disfrute de una jornada de cumpleaños.</p>
-                        <span class="more">mas</span>
                         </div>
                         </div>
                         </div>
@@ -341,7 +269,6 @@ html, body {
                 <div class="general">
                 <h1>Diligencia de padres</h1>
                 <p>Recepción de notas, reunión de padres, citas médicas y demás asuntos personales</p>
-                <span class="more">mas</span>
                 </div>
                 </div>
                 </div>
@@ -378,7 +305,6 @@ html, body {
                 <div class="general">
                 <h1>Citas médicas</h1>
                 <p>Tiempo para asistir a citas médicas particulares</p>
-                <span class="more">mas</span>
                 </div>
                 </div>
                 </div>
@@ -416,7 +342,6 @@ html, body {
                 <div class="general">
                 <h1>Grados propios o familiares</h1>
                 <p>Tiempo para asistir a grados, promoción o algún familiar cercano </p>
-                <span class="more">mas</span>
                 </div>
                 </div>
                 </div>
@@ -453,7 +378,6 @@ html, body {
                 <div class="general">
                 <h1>Tiempo academico</h1>
                 <p>Tiempo para actividades académicas, matriculares e inscripciones</p>
-                <span class="more">mas</span>
                 </div>
                 </div>
                 </div>
@@ -488,7 +412,6 @@ html, body {
                 <div class="general">
                 <h1>Otras activdades</h1>
                 <p>Tiempo para activdades academicas, matriculares e inscripciones.</p>
-                <span class="more">mas</span>
                 </div>
                 </div>
                 </div>
