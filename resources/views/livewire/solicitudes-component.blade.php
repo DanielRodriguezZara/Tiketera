@@ -233,11 +233,11 @@ html, body {
     <title>Tarjetas de Datos</title>
 </head>
 
-  
-        
+
+
 
 <body>
-    
+
         <div>
             <div class="row">
             <!-- Sección 1 -->
@@ -252,16 +252,16 @@ html, body {
                         </div>
                         <label for="fechaInicio">Fecha y Hora de Inicio:</label>
                                                                 <input type="datetime-local" id="fechaInicio">
-                                            
+
                                                                 <label for="fechaFin">Fecha y Hora de Fin:</label>
                                                                 <input type="datetime-local" id="fechaFin">
-                                            
+
                                                                 <div id="reloj"></div>
-                                            
+
                                                                 <button onclick="iniciarDescanso()">Iniciar Descanso</button>
                                                                 <button id="btnCancelar" onclick="cancelarDescanso()" disabled>Cancelar</button>
-                        
-                        
+
+
                         </div>
                         <div class="general">
                         <h1>Disfrute su cumpleaños</h1>
@@ -289,16 +289,16 @@ html, body {
                 </div>
                 <label for="fechaInicio">Fecha y Hora de Inicio:</label>
                                                         <input type="datetime-local" id="fechaInicio">
-                                    
+
                                                         <label for="fechaFin">Fecha y Hora de Fin:</label>
                                                         <input type="datetime-local" id="fechaFin">
-                                    
+
                                                         <div id="reloj"></div>
-                                    
+
                                                         <button onclick="iniciarDescanso()">Iniciar Descanso</button>
                                                         <button id="btnCancelar" onclick="cancelarDescanso()" disabled>Cancelar</button>
-                
-                
+
+
                 </div>
                 <div class="general">
                 <h1>Disfrute de tiempo familiar</h1>
@@ -327,16 +327,16 @@ html, body {
                 </div>
                 <label for="fechaInicio">Fecha y Hora de Inicio:</label>
                                                         <input type="datetime-local" id="fechaInicio">
-                                    
+
                                                         <label for="fechaFin">Fecha y Hora de Fin:</label>
                                                         <input type="datetime-local" id="fechaFin">
-                                    
+
                                                         <div id="reloj"></div>
-                                    
+
                                                         <button onclick="iniciarDescanso()">Iniciar Descanso</button>
                                                         <button id="btnCancelar" onclick="cancelarDescanso()" disabled>Cancelar</button>
-                
-                
+
+
                 </div>
                 <div class="general">
                 <h1>Diligencia de padres</h1>
@@ -364,16 +364,16 @@ html, body {
                 </div>
                 <label for="fechaInicio">Fecha y Hora de Inicio:</label>
                                                         <input type="datetime-local" id="fechaInicio">
-                                    
+
                                                         <label for="fechaFin">Fecha y Hora de Fin:</label>
                                                         <input type="datetime-local" id="fechaFin">
-                                    
+
                                                         <div id="reloj"></div>
-                                    
+
                                                         <button onclick="iniciarDescanso()">Iniciar Descanso</button>
                                                         <button id="btnCancelar" onclick="cancelarDescanso()" disabled>Cancelar</button>
-                
-                
+
+
                 </div>
                 <div class="general">
                 <h1>Citas médicas</h1>
@@ -402,16 +402,16 @@ html, body {
                 </div>
                 <label for="fechaInicio">Fecha y Hora de Inicio:</label>
                                                         <input type="datetime-local" id="fechaInicio">
-                                    
+
                                                         <label for="fechaFin">Fecha y Hora de Fin:</label>
                                                         <input type="datetime-local" id="fechaFin">
-                                    
+
                                                         <div id="reloj"></div>
-                                    
+
                                                         <button onclick="iniciarDescanso()">Iniciar Descanso</button>
                                                         <button id="btnCancelar" onclick="cancelarDescanso()" disabled>Cancelar</button>
-                
-                
+
+
                 </div>
                 <div class="general">
                 <h1>Grados propios o familiares</h1>
@@ -439,16 +439,16 @@ html, body {
                 </div>
                 <label for="fechaInicio">Fecha y Hora de Inicio:</label>
                                                         <input type="datetime-local" id="fechaInicio">
-                                    
+
                                                         <label for="fechaFin">Fecha y Hora de Fin:</label>
                                                         <input type="datetime-local" id="fechaFin">
-                                    
+
                                                         <div id="reloj"></div>
-                                    
+
                                                         <button onclick="iniciarDescanso()">Iniciar Descanso</button>
                                                         <button id="btnCancelar" onclick="cancelarDescanso()" disabled>Cancelar</button>
-                
-                
+
+
                 </div>
                 <div class="general">
                 <h1>Tiempo academico</h1>
@@ -476,12 +476,12 @@ html, body {
                 </div>
                 <label for="fechaInicio">Fecha y Hora de Inicio:</label>
                                                         <input type="datetime-local" id="fechaInicio">
-                                    
+
                                                         <label for="fechaFin">Fecha y Hora de Fin:</label>
                                                         <input type="datetime-local" id="fechaFin">
-                                    
+
                                                         <div id="reloj"></div>
-                                    
+
                                                         <button onclick="iniciarDescanso()">Iniciar Descanso</button>
                                                         <button id="btnCancelar" onclick="cancelarDescanso()" disabled>Cancelar</button>
                 </div>
@@ -503,32 +503,32 @@ html, body {
    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script>
         var intervalo;
-    
+
         function iniciarDescanso() {
             var fechaInicio = moment(document.getElementById("fechaInicio").value);
             var fechaFin = moment(document.getElementById("fechaFin").value);
-    
+
             if (fechaInicio.isValid() && fechaFin.isValid() && fechaFin.isAfter(fechaInicio)) {
                 var duracionTotal = moment.duration(fechaFin.diff(fechaInicio));
-    
+
                 intervalo = setInterval(function () {
                     var tiempoRestante = moment.duration(fechaFin.diff(moment()));
                     document.getElementById("reloj").innerHTML = tiempoRestante.hours() + ":" + tiempoRestante.minutes() + ":" + tiempoRestante.seconds();
-    
+
                     if (tiempoRestante.asSeconds() <= 0) {
                         clearInterval(intervalo);
                         document.getElementById("reloj").innerHTML = "Descanso completado";
                         document.getElementById("btnCancelar").disabled = true;
                     }
                 }, 1000);
-    
+
                 // Deshabilitar el botón de iniciar y habilitar el de cancelar
                 document.getElementById("btnCancelar").disabled = false;
             } else {
                 alert("Ingrese valores válidos para la fecha y la hora");
             }
         }
-    
+
         function cancelarDescanso() {
             clearInterval(intervalo);
             document.getElementById("reloj").innerHTML = "Descanso cancelado";
