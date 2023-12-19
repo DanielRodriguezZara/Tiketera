@@ -5,3 +5,6 @@
 [x-cloak] {
     display: none;
 }
+.bg-glass-chat {
+    @apply border border-white bg-white/60 pl-4 backdrop-blur-md;
+}

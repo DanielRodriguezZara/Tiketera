@@ -13,6 +13,9 @@ export default {
 
     theme: {
         extend: {
+            backgroundImage: {
+                chat: "url('/public/img/background_chat.svg')",
+            },
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
             },

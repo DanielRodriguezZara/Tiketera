@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\SolicitudForm;
 use App\Livewire\Home\Dashboard;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\SolicitudesComponent;
@@ -30,3 +31,4 @@ Route::middleware([
 
 Route::get('/solicitudes', SolicitudesComponent::class)->name('solicitudes');
 Route::get('/alta-usuarios', AltaUsuariosComponent::class)->name('alta-usuarios');
+Route::get('/solicitud/formulario/{user}', SolicitudForm::class)->name('solicitud-form');

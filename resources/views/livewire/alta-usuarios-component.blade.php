@@ -1,5 +1,5 @@
 <div>
-    <div class ="p-8 borderw-full shadow-lg rounded-lg">
+    <div class ="p-8 borderw-full rounded-lg">
         <h1 class ="text-center font-bold text-xl uppercase">Crear nuevos usuarios</h1>
 
         <form wire:submit="save">

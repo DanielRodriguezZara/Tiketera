@@ -20,7 +20,7 @@
     <body class="font-sans antialiased">
         <x-banner />
 
-        <div class="min-h-screen bg-gray-100 pb-20">
+        <div class="min-h-screen bg-chat pb-20">
             @livewire('navigation-menu')
 
             <!-- Page Heading -->
@@ -33,7 +33,7 @@
             @endif
 
             <!-- Page Content -->
-            <main class="w-11/12 sm:w-[95%] bg-white shadow-md rounded-b-md min-h-screen mx-auto mt-10 p-8">
+            <main class="w-11/12 sm:w-[95%] bg-glass-chat shadow-md rounded-b-md min-h-screen mx-auto mt-10 p-8">
                 {{ $slot }}
             </main>
         </div>
